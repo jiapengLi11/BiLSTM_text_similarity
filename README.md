@@ -1,15 +1,24 @@
 # BiLSTM Text Similarity
 
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![PyTorch](https://img.shields.io/badge/Framework-PyTorch-ee4c2c)
+![Model](https://img.shields.io/badge/Model-BiLSTM-6f42c1)
+![Task](https://img.shields.io/badge/Task-Text%20Similarity-green)
+
 ## Overview
 
 This repository is a text similarity project based on a BiLSTM model and the STS-B dataset. It includes preprocessing, tokenizer creation, training, validation, testing, and prediction.
 
-## Tech Stack
+## Preview
 
-- Python
-- PyTorch
-- BiLSTM
-- Matplotlib / SciPy / tqdm
+![training-history](training_history.png)
+
+## Highlights
+
+- BiLSTM-based sentence similarity baseline
+- training with early stopping and metric tracking
+- tokenizer building and preprocessing pipeline
+- saved checkpoints and tokenizer artifacts preserved in the repository
 
 ## Project Structure
 
@@ -18,17 +27,8 @@ This repository is a text similarity project based on a BiLSTM model and the STS
 - `data_loader.py`: dataset loading and dataloader creation
 - `preprocessor.py`: text preprocessing and tokenizer preparation
 - `model.py`: BiLSTM similarity model definition
-- `config.py`: hyperparameters and file-path configuration
+- `config.py`: hyperparameters and path configuration
 - `STS-B/`: dataset files used during experiments
-- `training_history.png`: exported training curve
-
-## Existing Artifacts
-
-The repository currently still contains local model outputs:
-
-- `chinese_similarity_model.pth`
-- `chinese_similarity_model_best.pth`
-- `chinese_tokenizer.pkl`
 
 ## Setup
 
@@ -38,13 +38,13 @@ pip install torch matplotlib scipy tqdm
 
 ## Usage
 
-Train and evaluate the model:
+Train:
 
 ```bash
 python train.py
 ```
 
-Run prediction:
+Predict:
 
 ```bash
 python predict.py
@@ -53,5 +53,4 @@ python predict.py
 ## Notes
 
 - `config.py` currently contains absolute local paths for the dataset files.
-- This repository is best viewed as a preserved experiment project rather than a fully cleaned release.
-- A useful next improvement would be adding a dedicated `requirements.txt` and replacing absolute paths with relative ones.
+- This repository is preserved more as an experiment snapshot than as a fully cleaned release.
