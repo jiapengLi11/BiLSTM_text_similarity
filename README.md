@@ -1,41 +1,42 @@
 # BiLSTM Text Similarity
 
-This repository is a text similarity project based on a BiLSTM model and the STS-B dataset.
+## Overview
 
-It contains a full local training pipeline, including preprocessing, dataset splitting, tokenizer creation, model training, validation, testing, and prediction.
+This repository is a text similarity project based on a BiLSTM model and the STS-B dataset. It includes preprocessing, tokenizer creation, training, validation, testing, and prediction.
 
-## Included
+## Tech Stack
+
+- Python
+- PyTorch
+- BiLSTM
+- Matplotlib / SciPy / tqdm
+
+## Project Structure
 
 - `train.py`: training, validation, early stopping, and metric tracking
-- `predict.py`: inference script for text-pair similarity prediction
+- `predict.py`: similarity prediction
 - `data_loader.py`: dataset loading and dataloader creation
 - `preprocessor.py`: text preprocessing and tokenizer preparation
 - `model.py`: BiLSTM similarity model definition
-- `config.py`: hyperparameters, file paths, and runtime settings
+- `config.py`: hyperparameters and file-path configuration
+- `STS-B/`: dataset files used during experiments
 - `training_history.png`: exported training curve
-- `STS-B/`: dataset files used during experimentation
 
 ## Existing Artifacts
 
-This repository currently still contains several local model artifacts:
+The repository currently still contains local model outputs:
 
 - `chinese_similarity_model.pth`
 - `chinese_similarity_model_best.pth`
 - `chinese_tokenizer.pkl`
 
-These are useful for preservation, but they also make the repository heavier than a typical clean code snapshot.
-
 ## Setup
-
-Install the dependencies used by the project environment:
 
 ```bash
 pip install torch matplotlib scipy tqdm
 ```
 
-If you want stricter reproducibility, create a dedicated `requirements.txt` later based on your local environment.
-
-## Run
+## Usage
 
 Train and evaluate the model:
 
@@ -52,5 +53,5 @@ python predict.py
 ## Notes
 
 - `config.py` currently contains absolute local paths for the dataset files.
-- The project is designed around Chinese text similarity experimentation with a BiLSTM baseline.
-- A good next cleanup step would be replacing the absolute paths with relative paths or command-line arguments.
+- This repository is best viewed as a preserved experiment project rather than a fully cleaned release.
+- A useful next improvement would be adding a dedicated `requirements.txt` and replacing absolute paths with relative ones.
